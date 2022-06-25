@@ -1,0 +1,178 @@
+conky.config = {
+
+
+	--General settings
+
+	background = true,
+	cpu_avg_samples = 6,
+	diskio_avg_samples = 10,
+	double_buffer = true,
+	if_up_strictness = 'address',
+	net_avg_samples = 2,
+	no_buffers = true,
+	temperature_unit = 'celsius',
+	text_buffer_size = 2048,
+	update_interval = 1,
+	imlib_cache_size = 0,
+
+
+	--Position
+
+	alignment = 'middle_right',
+	gap_x = 15,
+	gap_y = 0,
+	minimum_height = 600,
+	minimum_width = 300,
+	maximum_width = 300,
+
+
+	--Visual
+
+	border_inner_margin = 10,
+	border_outer_margin = 5,
+	border_width = 0,
+	default_bar_width = 80,
+	default_bar_height = 10,
+	default_gauge_height = 25,
+	default_gauge_width =40,
+	default_graph_height = 40,
+	default_graph_width = 0,
+	default_shade_color = '#000000',
+	default_outline_color = '#000000',
+	draw_borders = false,
+	draw_graph_borders = true,
+	draw_shades = false,
+	draw_outline = false,
+	stippled_borders = 0,
+
+
+	--Textual
+
+	extra_newline = false,
+	format_human_readable = true,
+	font = 'Waree:size=10',
+	max_text_width = 0,
+	max_user_text = 16384,
+	override_utf8_locale = true,
+	short_units = true,
+	top_name_width = 21,
+	top_name_verbose = false,
+	uppercase = false,
+	use_spacer = 'none',
+	use_xft = true,
+	xftalpha = 1,
+
+
+	--Windows
+
+	own_window = true,
+	own_window_argb_value = 100,
+	own_window_argb_visual = true,
+	own_window_colour = '#000000',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = true,
+	own_window_title = 'system_conky',
+	own_window_type = 'normal',
+
+
+	--Colours
+
+	color1 = '#FFFFFF',
+	color2 = '#000080',
+	color3 = '#5079AA',
+
+
+};
+
+conky.text = [[
+${color1}${voffset 4}${font GE Inspira:size=36}${alignc}${time %l}:${time %M} ${time %p}${font}${color}
+${color1}${voffset 4}${font GE Inspira:size=12}${alignc}${time %A} ${time %B} ${time %e}, ${time %Y}${font}${color}
+#
+#
+#
+#
+#
+
+#
+#
+#
+#
+#
+${color2}${font Roboto:size=10}${voffset 2}S Y S T E M	${hr 2}${font}${color}
+${color3}${offset 20}Hostname:${color} ${alignr}${nodename}
+${color3}${offset 20}Distro:${color}${alignr}${exec lsb_release -ds}
+${color3}${offset 20}Kernel:${color}${alignr}${exec uname} ${exec uname -r}
+${color3}${offset 20}Uptime:${color} ${alignr}${uptime}
+#
+#
+#
+#
+#
+
+#
+#
+#
+#
+#
+${color2}${font Roboto:size=10}P R O C E S S O R S	${hr 2}${font}${color}
+${color3}${offset 20}CPU Freq:${color} $alignr${freq_g} Ghz
+${color3}${offset 20}CPU Temp:${color} $alignr${hwmon 1 temp 1}°C
+${color3}${offset 20}History:${color} ${alignr}${cpugraph 10,80}
+${color3}${offset 20}CPU Core 1:${color} ${alignr}${offset -10}${cpu cpu1}%${alignr}${cpubar cpu1}
+${color3}${offset 20}CPU Core 2:${color} ${alignr}${offset -10}${cpu cpu2}%${alignr}${cpubar cpu2}
+${color3}${offset 20}CPU Core 3:${color} ${alignr}${offset -10}${cpu cpu3}%${alignr}${cpubar cpu3}
+${color3}${offset 20}CPU Core 4:${color} ${alignr}${offset -10}${cpu cpu4}%${alignr}${cpubar cpu4}
+${color3}${offset 20}CPU Core 5:${color} ${alignr}${offset -10}${cpu cpu5}%${alignr}${cpubar cpu4}
+${color3}${offset 20}CPU Core 6:${color} ${alignr}${offset -10}${cpu cpu6}%${alignr}${cpubar cpu4}
+${color3}${offset 20}Top Processes:${goto 222}cpu${goto 274}mem%${color}
+${voffset 4}${offset 20}     1  -  ${top name 1}${alignr}${goto 170} ${goto 222}${top cpu 1} ${goto 274}${top mem 1}
+     ${offset 20}2  -  ${top name 2}${alignr} ${goto 222}${top cpu 2} ${goto 274}${top mem 2}
+     ${offset 20}3  -  ${top name 3}${alignr} ${goto 222}${top cpu 3} ${goto 274}${top mem 3}
+#
+#
+#
+#
+#
+
+#
+#
+#
+#
+#
+${color2}${font Roboto:size=10}M E M O R Y	${hr 2}${font}${color}
+${color3}${offset 20}RAM: ${color}${alignr}${offset -10}${mem} / ${memmax}${alignr}${membar}
+${color3}${offset 20}Top Processes:${goto 222}cpu${goto 274}mem%${color}
+${voffset 4}${offset 20}     1  -  ${top_mem name 1}${alignr}${goto 170} ${goto 222}${top_mem cpu 1} ${goto 274}${top_mem mem 1}
+     ${offset 20}2  -  ${top_mem name 2}${alignr}${goto 170} ${goto 222}${top_mem cpu 2} ${goto 274}${top_mem mem 2}
+     ${offset 20}3  -  ${top_mem name 3}${alignr}${goto 170} ${goto 222}${top_mem cpu 3} ${goto 274}${top_mem mem 3}
+#
+#
+#
+#
+#
+
+#
+#
+#
+#
+#
+${color2}${font Roboto:size=10}D R I V E S	${hr 2}${font}${color}
+${offset 20}${color3}Drive filled:${color} ${alignr}${offset -10}${fs_used /} / ${fs_size /}${alignr}${fs_bar}
+${offset 20}${color3}Read:${color} ${alignr}${offset -10}${diskio_read /dev/nvme0n1p3}${alignr}${diskiograph_read nvme0n1p3 10,80}
+${offset 20}${color3}Write:${color} ${alignr}${offset -10}${diskio_write /dev/nvme0n1p3}${alignr}${diskiograph_write nvme0n1p3 10,80}
+#
+#
+#
+#
+#
+
+#
+#
+#
+#
+#
+${color2}${font Roboto:size=10}N E T W O R K	${hr 2}${font}${color}
+${color3}${offset 20}IP Address: ${color} ${alignr}${offset -10$}${exec curl -s www.icanhazip.com}
+${color3}${offset 20}Upload:${color} ${alignr}${offset -10$}${upspeed wlp2s0}${alignr}${upspeedgraph enp6s0 10,80}
+${color3}${offset 20}Download:${color} ${alignr}${offset -10$}${downspeed wlp2s0}${alignr}${downspeedgraph enp6s0 10,80}
+]];
