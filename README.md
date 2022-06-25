@@ -4,7 +4,7 @@ Conky
 
 Description:
 
-My Theme for Conky
+My theme for Conky
 
 State:
 
