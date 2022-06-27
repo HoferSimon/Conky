@@ -8,4 +8,4 @@ My theme for Conky
 
 State:
 
-Working...
+Completed
