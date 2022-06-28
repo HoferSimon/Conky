@@ -238,7 +238,7 @@
 
 > You can choose from different window types: normal, override, dock, desktop, panel
 
-### Colour
+### Color
 
 #### color1
 
