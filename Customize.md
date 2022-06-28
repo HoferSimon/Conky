@@ -1,8 +1,12 @@
 # Customize your Conky even more
 
-If you want to customize your Conky even more you can open your conky.conf file again and change the text for your needs.
+> If you want to customize your Conky even more you can open your conky.conf file again and change the text for your needs.
 
-If you have questions that arent described here, you can go to http://conky.sourceforge.net/config_settings.html or alwys feel free to contact me over Email - simon.05hofer@gmail.com or Discord - ＳｉｍＳｏｎ#2990.
+> If you have questions that arent described here, you can go to http://conky.sourceforge.net/config_settings.html or alwys feel free to contact me over Email - simon.05hofer@gmail.com or Discord - ＳｉｍＳｏｎ#2990.
+
+> This Conky Theme look like this:
+
+![Conky-image](/Conky-image.png)
 
 # Customize Tutorial
 
